@@ -1,0 +1,11 @@
+from bs4 import BeautifulSoup
+import requests
+
+
+
+url=f"https://www.alahednews.com.lb/catdetails.php?catid=116"
+result=requests.get(url)
+doc = BeautifulSoup(result.text,"html.parser")
+#gpu_containers = doc.find_all(class_="col-md-6")
+title_tag = doc.find(class_="card-title")
+print(title_tag)
